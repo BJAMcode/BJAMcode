@@ -22,7 +22,7 @@ jobs:
       - run: git status
 
       # Debugging steps
-      - run: echo "GitHub User: ${{ secrets.GITHUB_ACTOR }}"
+      - run: echo "GitHub User:${{ secrets.GITHUB_ACTOR }}"
       - run: ls -R
       - run: cat dist/github-contribution-grid-snake.gif
 
