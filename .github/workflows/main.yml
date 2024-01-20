@@ -9,13 +9,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
-
-      - uses: actions/checkout@v2
+          node-version: '12'
 
       - uses: Platane/snk@master
         id: snake-gif
