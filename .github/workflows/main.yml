@@ -9,17 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '12'
+      - uses: actions/checkout@v2
 
       - uses: Platane/snk@master
         id: snake-gif
@@ -31,7 +22,7 @@ jobs:
       - run: git status
 
       # Debugging steps
-      - run: echo "GitHub User:${{ secrets.GITHUB_ACTOR }}"
+      - run: echo "GitHub User: ${{ secrets.GITHUB_ACTOR }}"
       - run: ls -R
       - run: cat dist/github-contribution-grid-snake.gif
 
